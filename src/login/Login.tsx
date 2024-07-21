@@ -57,7 +57,7 @@ const Login = () => {
     };
 
     const handleOauthSignin = () => {
-        window.location.href = "http://localhost:3001/v1/auth/google";
+        window.location.href = import.meta.env.OAUTH_URL;
       };
     
     return (
