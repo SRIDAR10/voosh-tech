@@ -4,16 +4,17 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 const GoogleCallback = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const isInitialMount = useRef(true);
+//   const isInitialMount = useRef(true);
 
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
+    // if (isInitialMount.current) {
+    //   isInitialMount.current = false;
+    //   return;
+    // }
 
     const handleCallback = async () => {
       try {
+        console.log(`${import.meta.env.VITE_API_URL}/v1/auth/google/callback?code=${searchParams.get("code")}`)
         const response = await fetch(`${import.meta.env.VITE_API_URL}/v1/auth/google/callback?code=${searchParams.get("code")}`, {
           credentials: 'include'
         });
@@ -34,7 +35,7 @@ const GoogleCallback = () => {
     };
 
     handleCallback();
-  }, [searchParams, navigate]);
+  }, [searchParams]);
 
   return <div>Authenticating...</div>;
 };
