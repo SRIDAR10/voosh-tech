@@ -4,6 +4,7 @@ import Login from './login/Login';
 import Signup from './signup/Signup';
 import Dashboard from './dashboard/Dashboard';
 import ProtectedRoute from './utils/components/ProtectedRoute';
+import GoogleCallback from './callback/GoogleOAuthCallback';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
         <Route path="/" element={<ProtectedRoute element={<Dashboard />} />} />
+        <Route path="/google/callback" element={<GoogleCallback/>} />
       </Routes>
     </BrowserRouter>
 
