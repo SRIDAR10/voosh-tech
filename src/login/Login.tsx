@@ -55,9 +55,10 @@ const Login = () => {
             setIsSubmitting(false);
         }
     };
-
-    const handleOauthSignin = () => {
-        window.location.href = import.meta.env.OAUTH_URL;
+    
+    const handleOauthSignin = (e : any) => {
+        e.preventDefault();
+        window.location.href = import.meta.env.VITE_OAUTH_URL;
       };
     
     return (

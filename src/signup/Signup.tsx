@@ -32,8 +32,9 @@ const Signup = () => {
         return regex.test(email);
     };
 
-    const handleOauthSignin = () => {
-        window.location.href = "http://localhost:3001/v1/auth/google";
+    const handleOauthSignin = (e : any) => {
+        e.preventDefault();
+        window.location.href = import.meta.env.VITE_OAUTH_URL;
     };
 
 
@@ -167,9 +168,10 @@ const Signup = () => {
                             <a href="/login" className="text-blue-600 text-sm">Login</a>
                         </div>
                         <div className="w-full items-center justify-center flex rounded-md">
-                            <button className="w-fit bg-blue-600 p-2 text-white rounded-sm" onClick={handleOauthSignin}>Signup with Google</button>
-                        </div>
+                        <button className="w-fit bg-blue-600 p-2 text-white rounded-sm" onClick={handleOauthSignin}>Signup with Google</button>
+                    </div>
                     </form>
+
                 </div>
             </div>
         </AuthLayout>
