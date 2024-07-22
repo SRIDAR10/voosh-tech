@@ -189,7 +189,7 @@ export default function KanbanBoard({ refetch, resetRefetch, currentSort, search
         deleteTask({ id: task?.id ?? "" }).then(() => {
             setOpenDeleteModal(false);
             setSelectedTaskToDelete({} as Task);
-            fetchAllTasks().then((data) => {
+            fetchAllTasks(currentSort, searchTerm ?? "").then((data) => {
                 setColumns(data);
 
             });
