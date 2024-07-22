@@ -39,7 +39,7 @@ const Dashboard = () => {
       <DashboardHeader searchTerm={searchTerm} handleSearch={handleSearch} handleAddTask={handleAddTask}         handleSort={handleSort}
         currentSort={currentSort}/>
       <KanbanBoard refetch = {refetch} resetRefetch={resetRefetch} currentSort={currentSort} searchTerm={searchTerm}/>
-      <AddModal isOpen={openTask} onSave={saveTask} onClose={handleClose}/>
+      <AddModal isOpen={openTask} onSave={saveTask} onClose={handleClose} key={`key_${Math.random().toString(36).substr(2, 9)}`}/>
     </AuthLayout>
   )
 }
