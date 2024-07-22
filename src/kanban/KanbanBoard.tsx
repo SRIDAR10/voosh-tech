@@ -179,7 +179,7 @@ export default function KanbanBoard({ refetch, resetRefetch, currentSort, search
         updateTask(task).then(() => {
             setOpenEditModal(false);
             setSelecctedTaskToEdit({} as Task);
-            fetchAllTasks().then((data) => {
+            fetchAllTasks(currentSort, searchTerm ?? "").then((data) => {
                 setColumns(data);
 
             });
